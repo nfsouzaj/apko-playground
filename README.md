@@ -16,7 +16,5 @@ docker pull cgr.dev/chainguard/apko:latest
 ## Create apko.yaml
 
 ## Run using apko image
-docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/alpine-base.yaml apko-alpine:edge apko-alpine.tar
-
-docker run -v "$PWD":/work cgr.dev/chainguard/apko build wolfi-base/apko.yaml apko-wolfi:test apko-wolfi.tar\
-docker run -v "$PWD":/work cgr.dev/chainguard/apko build image/nils.yaml apko-wolfii:test apko-wolfii.tar
+docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/alpine-base-rootless.yaml apko-alpine:edge apko-alpine.tar
+docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/nils.yaml apko-wolfii:test apko-wolfii.tar
