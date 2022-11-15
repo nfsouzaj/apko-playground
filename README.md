@@ -5,6 +5,9 @@
 - Making sure that the final stage of your image composition is 100% visible to scan tools
 - Having all of that upfront you can build an sbom, being confident that the results of your scan will be 10% accurate
 - it also builds much smaller images
+
+# Why not distroless 
+- Easier to handle apko in detriment of bazel
 # how to build
 
 ## need apk-tools
@@ -17,4 +20,4 @@ docker pull cgr.dev/chainguard/apko:latest
 
 ## Run using apko image
 docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/alpine-base-rootless.yaml apko-alpine:edge apko-alpine.tar
-docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/nils.yaml apko-wolfii:test apko-wolfii.tar
+docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/wolfii.yaml apko-wolfii:test apko-wolfii.tar
