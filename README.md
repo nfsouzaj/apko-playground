@@ -2,8 +2,8 @@
 - Combinatation of apko and melange
 - Turn the code into apk package
 - Turn the apk package into container image
-- Making sure that the final stage of your image composition is 100% visible to scan tools
-- Having all of that upfront you can build an sbom, being confident that the results of your scan will be 10% accurate
+- Making sure that the final stage of your image composition is 100% visible to scan tools as scanners can only see what is installed via package manager
+- Having all of that upfront you can build an sbom, being confident that the results of your scan will be 100% accurate
 - it also builds much smaller images
 
 # Why not distroless 
@@ -11,12 +11,13 @@
 # how to build
 
 ## need apk-tools
-apko has a dependency on apk-tools. If you're not running on Alpine Linux or another apk-based distribution, the quickest way to get apko running is to use the OCI Container (Docker) image:
+Apko has a dependency on apk-tools. If you're not running on Alpine Linux or another apk-based distribution, the quickest way to get apko running is to use the OCI Container (Docker) image:
 
 docker pull cgr.dev/chainguard/apko:latest
 
 
-## Create apko.yaml
+## Create you image.yaml File
+The image file that will replace the dockerfile will contain all the packages and configuration required to build your image.
 
 ## Run using apko image
 docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/alpine-base-rootless.yaml apko-alpine:edge apko-alpine.tar
