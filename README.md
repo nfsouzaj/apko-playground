@@ -8,9 +8,9 @@
 
 # Why not distroless 
 - Easier to handle apko in detriment of bazel
-# how to build
+# How to build
 
-## need apk-tools
+## Need apk-tools
 Apko has a dependency on apk-tools. If you're not running on Alpine Linux or another apk-based distribution, the quickest way to get apko running is to use the OCI Container (Docker) image:
 - docker pull cgr.dev/chainguard/apko:latest
 ## Create you image.yaml File
