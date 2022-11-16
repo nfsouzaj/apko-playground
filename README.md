@@ -17,9 +17,10 @@ Apko has a dependency on apk-tools. If you're not running on Alpine Linux or ano
 The image file that will replace the dockerfile will contain all the packages and configuration required to build your image.
 
 ## Run using apko image
+```
 docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/alpine-base-rootless.yaml apko-alpine:edge apko-alpine.tar
 docker run -v "$PWD":/work cgr.dev/chainguard/apko build images/wolfii.yaml apko-wolfii:test apko-wolfii.tar
-
+```
 ## You can then load the generated tar image into a Docker environment
 docker load < apko-alpine.tar
 
